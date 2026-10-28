@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="brand">🏦 SecureBank</div>
+    <span>Banking Management System</span>
+</header>
+
+<main class="container">
+    <section class="welcome">
+        <div>
+            <h1>Bank Dashboard</h1>
+            <p>Manage accounts and banking transactions.</p>
+        </div>
+        <button class="primary" id="addAccountBtn">+ New Account</button>
+    </section>
+
+    <section class="stats">
+        <article class="stat-card">
+            <span>Total Accounts</span>
+            <h2 id="totalAccounts">0</h2>
+        </article>
+        <article class="stat-card">
+            <span>Total Deposits</span>
+            <h2 id="totalBalance">₹0.00</h2>
+        </article>
+        <article class="stat-card">
+            <span>Transactions</span>
+            <h2 id="totalTransactions">0</h2>
+        </article>
+    </section>
+
+    <section class="panel" id="accountFormPanel" hidden>
+        <h2 id="formTitle">Create Bank Account</h2>
+        <form id="accountForm">
+            <div class="form-grid">
+                <label>
+                    Account Holder Name
+                    <input id="holderName" type="text"
+                           maxlength="80" required>
+                </label>
+                <label>
+                    Account Type
+                    <select id="accountType" required>
+                        <option value="Savings">Savings</option>
+                        <option value="Current">Current</option>
+                    </select>
+                </label>
+                <label id="initialDepositLabel">
+                    Initial Deposit (₹)
+                    <input id="initialDeposit" type="number"
+                           min="0" step="0.01" value="0" required>
+                </label>
+            </div>
+            <div class="actions">
+                <button class="primary" type="submit">Save Account</button>
+                <button class="secondary" type="button"
+                        id="cancelFormBtn">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="panel">
+        <div class="section-heading">
+            <h2>Bank Accounts</h2>
+            <input type="search" id="searchInput"
+                   placeholder="Search accounts...">
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Account No.</th>
+                        <th>Account Holder</th>
+                        <th>Type</th>
+                        <th>Balance</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="accountTable"></tbody>
+            </table>
+        </div>
+        <p id="emptyMessage">No accounts found. Create your first account.</p>
+    </section>
+
+    <section class="panel">
+        <h2>Recent Transactions</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Account No.</th>
+                        <th>Transaction</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTable"></tbody>
+            </table>
+        </div>
+        <p id="noTransactions">No transactions yet.</p>
+    </section>
+
+    <p id="message" role="status" aria-live="polite"></p>
+</main>
+
+<footer>
+    Banking Management System &copy; 2026
+    <p>Educational demo only — not for real banking.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

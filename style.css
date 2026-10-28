@@ -1,0 +1,281 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #142c4e;
+    --blue: #246bfd;
+    --bg: #f3f6fb;
+    --text: #263449;
+    --muted: #718096;
+    --border: #e2e8f0;
+    --green: #16855b;
+    --red: #d64545;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.header {
+    background: var(--navy);
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header span {
+    color: #dce7f8;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 32px auto;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: var(--navy);
+}
+
+h2 {
+    color: var(--navy);
+    margin-top: 0;
+}
+
+p {
+    color: var(--muted);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.stat-card, .panel {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #1a31500a;
+}
+
+.stat-card span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.stat-card h2 {
+    font-size: 28px;
+    margin: 12px 0 0;
+}
+
+.panel {
+    margin-bottom: 24px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #ccd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+    background: white;
+    color: var(--text);
+}
+
+input:focus, select:focus {
+    outline: 2px solid #b9d0ff;
+    border-color: var(--blue);
+}
+
+button {
+    padding: 11px 15px;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+button:hover {
+    filter: brightness(0.94);
+}
+
+button:focus-visible {
+    outline: 3px solid #91b6ff;
+    outline-offset: 2px;
+}
+
+.primary {
+    background: var(--blue);
+    color: white;
+}
+
+.secondary {
+    background: #e8edf5;
+    color: var(--navy);
+}
+
+.deposit-btn {
+    background: #e0f5e9;
+    color: #126c43;
+}
+
+.withdraw-btn {
+    background: #fff0d9;
+    color: #8b5500;
+}
+
+.edit-btn {
+    background: #e5edff;
+    color: #1749a4;
+}
+
+.delete-btn {
+    background: #ffe6e6;
+    color: #b42323;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.section-heading input {
+    max-width: 300px;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+th {
+    background: #f6f8fc;
+    color: #526179;
+}
+
+td .action-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+td button {
+    padding: 8px 10px;
+}
+
+#emptyMessage, #noTransactions {
+    text-align: center;
+    padding: 12px;
+}
+
+#message {
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    background: var(--navy);
+    color: white;
+    padding: 20px;
+}
+
+footer p {
+    color: #dce7f8;
+    margin-bottom: 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 760px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .section-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .section-heading input {
+        max-width: none;
+    }
+}
